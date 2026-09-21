@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./components/Layout";
 import Hero from "./components/Hero";
-import Projects from "./pages/Projects";
+import Projects from "./components/Projects";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
