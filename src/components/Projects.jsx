@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import {
   ExternalLink,
   Sparkles,
@@ -164,109 +165,120 @@ export default function Projects() {
                   delay: idx * 0.14,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{ y: -8 }}
-                className="group relative flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 shadow-[0_4px_20px_rgba(28,25,23,0.04)] hover:shadow-[0_16px_36px_rgba(28,25,23,0.09)] hover:border-stone-300/90 transition-all duration-300 overflow-hidden"
+                className="h-full"
               >
-                {/* ------------------------------------------------- */}
-                {/* Top Area: Styled abstract banner placeholder      */}
-                {/* ------------------------------------------------- */}
-                <div
-                  className={`relative w-full h-44 bg-gradient-to-br ${project.theme.gradient} border-b border-stone-100 flex items-center justify-center overflow-hidden p-6`}
+                <Tilt
+                  tiltMaxAngleX={5}
+                  tiltMaxAngleY={5}
+                  scale={1.02}
+                  transitionSpeed={2500}
+                  glareEnable={true}
+                  glareMaxOpacity={0.1}
+                  className="h-full rounded-3xl"
                 >
-                  {/* Subtle decorative grid lines in banner */}
-                  <div
-                    className="absolute inset-0 opacity-[0.07] mix-blend-multiply"
-                    style={{
-                      backgroundImage: `linear-gradient(#1C1917 1px, transparent 1px), linear-gradient(90deg, #1C1917 1px, transparent 1px)`,
-                      backgroundSize: "20px 20px",
-                    }}
-                  />
-
-                  {/* Soft ambient glow pill inside banner */}
-                  <div className="absolute w-32 h-32 rounded-full bg-white/70 blur-xl -top-6 -right-6" />
-
-                  {/* Badge on top right */}
-                  <span className="absolute top-4 right-4 text-[11px] font-bold px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-stone-200/70 text-stone-700 shadow-2xs">
-                    {project.badge}
-                  </span>
-
-                  {/* Dynamic Abstract Tech Graphic */}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 3 }}
-                      transition={{ type: "spring", stiffness: 350, damping: 20 }}
-                      className={`w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-md border ${project.theme.accentBorder} shadow-sm flex items-center justify-center ${project.theme.accentText}`}
+                  <div className="group relative flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 shadow-[0_4px_20px_rgba(28,25,23,0.04)] hover:shadow-[0_16px_36px_rgba(28,25,23,0.09)] hover:border-stone-300/90 transition-all duration-300 overflow-hidden h-full">
+                    {/* ------------------------------------------------- */}
+                    {/* Top Area: Styled abstract banner placeholder      */}
+                    {/* ------------------------------------------------- */}
+                    <div
+                      className={`relative w-full h-44 bg-gradient-to-br ${project.theme.gradient} border-b border-stone-100 flex items-center justify-center overflow-hidden p-6`}
                     >
-                      <ThemeIcon size={28} strokeWidth={2} />
-                    </motion.div>
-                  </div>
-                </div>
+                      {/* Subtle decorative grid lines in banner */}
+                      <div
+                        className="absolute inset-0 opacity-[0.07] mix-blend-multiply"
+                        style={{
+                          backgroundImage: `linear-gradient(#1C1917 1px, transparent 1px), linear-gradient(90deg, #1C1917 1px, transparent 1px)`,
+                          backgroundSize: "20px 20px",
+                        }}
+                      />
 
-                {/* ------------------------------------------------- */}
-                {/* Content Area                                      */}
-                {/* ------------------------------------------------- */}
-                <div className="p-6 sm:p-7 flex flex-col flex-1">
-                  <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <h3 className="text-xl font-bold text-[#1C1917] tracking-tight group-hover:text-[#C25E3E] transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
+                      {/* Soft ambient glow pill inside banner */}
+                      <div className="absolute w-32 h-32 rounded-full bg-white/70 blur-xl -top-6 -right-6" />
 
-                  <p className="text-sm text-[#78716C] leading-relaxed mb-6 flex-1">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack Pills / Chips */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${project.theme.chipBg} shadow-2xs transition-colors`}
-                      >
-                        {tech}
+                      {/* Badge on top right */}
+                      <span className="absolute top-4 right-4 text-[11px] font-bold px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-stone-200/70 text-stone-700 shadow-2xs">
+                        {project.badge}
                       </span>
-                    ))}
-                  </div>
 
-                  {/* ----------------------------------------------- */}
-                  {/* Card Footer: Action Buttons                     */}
-                  {/* ----------------------------------------------- */}
-                  <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
-                    <span className="text-xs font-medium text-stone-400 group-hover:text-stone-600 transition-colors">
-                      Learn more
-                    </span>
+                      {/* Dynamic Abstract Tech Graphic */}
+                      <div className="relative z-10 flex flex-col items-center">
+                        <motion.div
+                          whileHover={{ scale: 1.1, rotate: 3 }}
+                          transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                          className={`w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-md border ${project.theme.accentBorder} shadow-sm flex items-center justify-center ${project.theme.accentText}`}
+                        >
+                          <ThemeIcon size={28} strokeWidth={2} />
+                        </motion.div>
+                      </div>
+                    </div>
 
-                    <div className="flex items-center gap-2">
-                      {/* GitHub Repo Button */}
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        whileHover={{ scale: 1.14 }}
-                        whileTap={{ scale: 0.94 }}
-                        className="p-2.5 rounded-xl bg-[#FAFAF9] text-stone-600 hover:text-[#1C1917] hover:bg-stone-100 border border-stone-200/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
-                        aria-label={`${project.title} GitHub Repository`}
-                        title="GitHub Repository"
-                      >
-                        <GithubIcon size={17} />
-                      </motion.a>
+                    {/* ------------------------------------------------- */}
+                    {/* Content Area                                      */}
+                    {/* ------------------------------------------------- */}
+                    <div className="p-6 sm:p-7 flex flex-col flex-1">
+                      <div className="flex items-center justify-between gap-2 mb-2.5">
+                        <h3 className="text-xl font-bold text-[#1C1917] tracking-tight group-hover:text-[#C25E3E] transition-colors">
+                          {project.title}
+                        </h3>
+                      </div>
 
-                      {/* Live Demo / Architecture Button */}
-                      <motion.a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        whileHover={{ scale: 1.14 }}
-                        whileTap={{ scale: 0.94 }}
-                        className="p-2.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
-                        aria-label={`${project.title} Live Demo / Architecture`}
-                        title="Live Demo / Architecture"
-                      >
-                        <ExternalLink size={17} />
-                      </motion.a>
+                      <p className="text-sm text-[#78716C] leading-relaxed mb-6 flex-1">
+                        {project.description}
+                      </p>
+
+                      {/* Tech Stack Pills / Chips */}
+                      <div className="flex flex-wrap gap-1.5 mb-6">
+                        {project.techStack.map((tech) => (
+                          <span
+                            key={tech}
+                            className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${project.theme.chipBg} shadow-2xs transition-colors`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* ----------------------------------------------- */}
+                      {/* Card Footer: Action Buttons                     */}
+                      {/* ----------------------------------------------- */}
+                      <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                        <span className="text-xs font-medium text-stone-400 group-hover:text-stone-600 transition-colors">
+                          Learn more
+                        </span>
+
+                        <div className="flex items-center gap-2">
+                          {/* GitHub Repo Button */}
+                          <motion.a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            whileHover={{ scale: 1.14 }}
+                            whileTap={{ scale: 0.94 }}
+                            className="p-2.5 rounded-xl bg-[#FAFAF9] text-stone-600 hover:text-[#1C1917] hover:bg-stone-100 border border-stone-200/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                            aria-label={`${project.title} GitHub Repository`}
+                            title="GitHub Repository"
+                          >
+                            <GithubIcon size={17} />
+                          </motion.a>
+
+                          {/* Live Demo / Architecture Button */}
+                          <motion.a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            whileHover={{ scale: 1.14 }}
+                            whileTap={{ scale: 0.94 }}
+                            className="p-2.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                            aria-label={`${project.title} Live Demo / Architecture`}
+                            title="Live Demo / Architecture"
+                          >
+                            <ExternalLink size={17} />
+                          </motion.a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Tilt>
               </motion.div>
             );
           })}

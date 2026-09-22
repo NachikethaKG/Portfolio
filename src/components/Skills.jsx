@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import {
   Code2,
   Server,
@@ -153,53 +154,65 @@ export default function Skills() {
                   delay: idx * 0.12,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 p-6 sm:p-7 shadow-[0_4px_20px_rgba(28,25,23,0.03)] hover:shadow-[0_12px_32px_rgba(28,25,23,0.07)] hover:border-stone-300 transition-all duration-300"
+                className="h-full"
               >
-                <div>
-                  {/* Category Header */}
-                  <div className="flex items-center justify-between gap-3 mb-5">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`w-11 h-11 rounded-2xl ${category.accentBg} ${category.accentColor} flex items-center justify-center border ${category.accentBorder} shadow-2xs group-hover:scale-105 transition-transform`}
-                      >
-                        <CategoryIcon size={20} />
+                <Tilt
+                  tiltMaxAngleX={5}
+                  tiltMaxAngleY={5}
+                  scale={1.02}
+                  transitionSpeed={2500}
+                  glareEnable={true}
+                  glareMaxOpacity={0.1}
+                  className="h-full rounded-3xl"
+                >
+                  <div className="group flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 p-6 sm:p-7 shadow-[0_4px_20px_rgba(28,25,23,0.03)] hover:shadow-[0_12px_32px_rgba(28,25,23,0.07)] hover:border-stone-300 transition-all duration-300 h-full">
+                    <div>
+                      {/* Category Header */}
+                      <div className="flex items-center justify-between gap-3 mb-5">
+                        <div className="flex items-center gap-3">
+                          <div
+                            className={`w-11 h-11 rounded-2xl ${category.accentBg} ${category.accentColor} flex items-center justify-center border ${category.accentBorder} shadow-2xs group-hover:scale-105 transition-transform`}
+                          >
+                            <CategoryIcon size={20} />
+                          </div>
+                          <h3 className="text-base sm:text-lg font-bold text-[#1C1917] tracking-tight">
+                            {category.title}
+                          </h3>
+                        </div>
                       </div>
-                      <h3 className="text-base sm:text-lg font-bold text-[#1C1917] tracking-tight">
-                        {category.title}
-                      </h3>
+
+                      {/* Skills Pills / Chips */}
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {category.skills.map((skill) => (
+                          <motion.div
+                            key={skill}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 20,
+                            }}
+                            className="cursor-pointer px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#FAFAF9] text-stone-700 border border-stone-200/80 hover:bg-[#C25E3E] hover:text-white hover:border-[#C25E3E] transition-colors duration-200 select-none shadow-2xs"
+                          >
+                            {skill}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Footer count indicator */}
+                    <div className="mt-8 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-400">
+                      <span className="flex items-center gap-1">
+                        <Terminal size={12} />
+                        Verified Stack
+                      </span>
+                      <span className="font-semibold text-stone-500">
+                        {category.skills.length} skills
+                      </span>
                     </div>
                   </div>
-
-                  {/* Skills Pills / Chips */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {category.skills.map((skill) => (
-                      <motion.div
-                        key={skill}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 20,
-                        }}
-                        className="cursor-pointer px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#FAFAF9] text-stone-700 border border-stone-200/80 hover:bg-[#C25E3E] hover:text-white hover:border-[#C25E3E] transition-colors duration-200 select-none shadow-2xs"
-                      >
-                        {skill}
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Footer count indicator */}
-                <div className="mt-8 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-400">
-                  <span className="flex items-center gap-1">
-                    <Terminal size={12} />
-                    Verified Stack
-                  </span>
-                  <span className="font-semibold text-stone-500">
-                    {category.skills.length} skills
-                  </span>
-                </div>
+                </Tilt>
               </motion.div>
             );
           })}

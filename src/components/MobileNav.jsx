@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Home, FolderGit2, Code2, Briefcase, Mail } from "lucide-react";
+import { Home, FolderGit2, Code2, Briefcase, Award, Mail } from "lucide-react";
 
 const MOBILE_NAV_ITEMS = [
   { id: "home", label: "Home", icon: Home },
   { id: "projects", label: "Projects", icon: FolderGit2 },
   { id: "skills", label: "Skills", icon: Code2 },
   { id: "experience", label: "Experience", icon: Briefcase },
+  { id: "certificates", label: "Certificates", icon: Award },
   { id: "contact", label: "Contact", icon: Mail },
 ];
 

@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -21,7 +22,14 @@ export default function App() {
 
   // Scrollspy via IntersectionObserver to keep nav state synchronized with viewport
   useEffect(() => {
-    const sections = ["home", "projects", "skills", "experience", "contact"];
+    const sections = [
+      "home",
+      "projects",
+      "skills",
+      "experience",
+      "certificates",
+      "contact",
+    ];
     const observerOptions = {
       root: null,
       rootMargin: "-25% 0px -55% 0px",
@@ -56,6 +64,7 @@ export default function App() {
       <Projects />
       <Skills />
       <Experience />
+      <Certificates />
 
       {/* Beyond the Code and Contact */}
       <Contact />
