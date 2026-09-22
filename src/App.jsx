@@ -4,7 +4,8 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
-import Contact from "./pages/Contact";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -48,22 +49,19 @@ export default function App() {
       activeSection={activeSection}
       onSelectSection={handleSelectSection}
     >
-      {/* Hero section */}
+      {/* Hero introduction section */}
       <Hero onNavigate={handleSelectSection} />
 
       {/* Showcase page sections */}
       <Projects />
       <Skills />
       <Experience />
+
+      {/* Beyond the Code and Contact */}
       <Contact />
 
-      {/* Warm minimalist footer */}
-      <footer className="w-full py-8 text-center border-t border-stone-200/60 text-xs text-[#78716C] bg-white/40 backdrop-blur-xs">
-        <p>
-          &copy; {new Date().getFullYear()} Nachiketha. Built with React, Vite,
-          Tailwind CSS &amp; Framer Motion.
-        </p>
-      </footer>
+      {/* Warm minimalist site footer */}
+      <Footer />
     </Layout>
   );
 }

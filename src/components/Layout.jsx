@@ -5,7 +5,7 @@ import BackgroundBlobs from "./BackgroundBlobs";
 
 export default function Layout({ children, activeSection, onSelectSection }) {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#FAFAF9] text-[#1C1917] selection:bg-[#FBF0EB] selection:text-[#C25E3E]">
+    <div className="relative min-h-screen flex flex-col bg-[#FAFAF9] text-[#1C1917] selection:bg-[#FBF0EB] selection:text-[#C25E3E] overflow-x-hidden">
       {/* Warm Ambient Animated Background Blobs */}
       <BackgroundBlobs />
 
@@ -16,7 +16,7 @@ export default function Layout({ children, activeSection, onSelectSection }) {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full pb-20 md:pb-12">
+      <main className="flex-1 w-full overflow-x-hidden">
         {children}
       </main>
 
