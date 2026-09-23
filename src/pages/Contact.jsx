@@ -111,7 +111,7 @@ export default function Contact() {
                 <GithubIcon size={18} />
               </a>
               <a
-                href="https://www.linkedin.com/in/nachikethakg"
+                href="https://www.linkedin.com/in/nachiketha-kg-8ab143278/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-[#F5F5F0] text-stone-700 hover:text-[#C25E3E] hover:bg-[#FBF0EB] transition-colors"

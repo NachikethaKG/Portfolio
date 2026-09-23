@@ -339,7 +339,7 @@ export default function Contact() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/nachikethakg"
+              href="https://www.linkedin.com/in/nachiketha-kg-8ab143278/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"

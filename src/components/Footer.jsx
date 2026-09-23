@@ -40,7 +40,7 @@ export default function Footer() {
           </a>
           <span className="text-stone-300">•</span>
           <a
-            href="https://www.linkedin.com/in/nachikethakg"
+            href="https://www.linkedin.com/in/nachiketha-kg-8ab143278/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-stone-600 hover:text-[#C25E3E] font-medium transition-colors"

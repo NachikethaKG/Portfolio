@@ -18,7 +18,7 @@ const CERTIFICATES_DATA = [
     date: "Verified",
     credentialId: "IBM-GENAI-PRO",
     credentialUrl:
-      "https://github.com/NachikethaKG/Certificates/blob/main/Certificates/IBM_GenAI/IBM%20Generative%20AI%20professional%20certificate.pdf",
+      "https://github.com/NachikethaKG/Certificates/blob/main/IBM_GenAI/IBM%20Generative%20AI%20professional%20certificate.pdf",
     inProgress: false,
     statusText: "View Credential",
     accent: {
@@ -36,7 +36,7 @@ const CERTIFICATES_DATA = [
     date: "Verified",
     credentialId: "UDEMY-JAVA-FS",
     credentialUrl:
-      "https://github.com/NachikethaKG/Certificates/blob/main/Certificates/Java_FullStack/JAVA%20FULLSTACK.pdf",
+      "https://github.com/NachikethaKG/Certificates/blob/main/Java_FullStack/JAVA%20FULLSTACK.pdf",
     inProgress: false,
     statusText: "View Credential",
     accent: {
@@ -54,7 +54,7 @@ const CERTIFICATES_DATA = [
     date: "Verified",
     credentialId: "UALBERTA-OOD",
     credentialUrl:
-      "https://github.com/NachikethaKG/Certificates/blob/main/Certificates/System_Design/object%20oriented%20design.pdf",
+      "https://github.com/NachikethaKG/Certificates/blob/main/System_Design/object%20oriented%20design.pdf",
     inProgress: false,
     statusText: "View Credential",
     accent: {
