@@ -6,7 +6,7 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
-import Hero3D from "./Hero3D";
+import HeroAnimation from "./HeroAnimation";
 
 // Staggered reveal animation container
 const containerVariants = {
@@ -39,8 +39,8 @@ export default function Hero({ onNavigate }) {
       aria-label="Introduction Hero"
       className="relative w-full min-h-[85vh] flex items-center justify-center pt-24 pb-16 md:pt-28 md:pb-20 overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           {/* ========================================================= */}
           {/* LEFT COLUMN: Typography & Call To Action                  */}
           {/* ========================================================= */}
@@ -48,12 +48,12 @@ export default function Hero({ onNavigate }) {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex-1 w-full text-center lg:text-left flex flex-col items-center lg:items-start"
+            className="flex-1 max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start"
           >
             {/* Greeting / Overline */}
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-stone-200/80 shadow-xs backdrop-blur-sm mb-4"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-stone-200/80 shadow-xs backdrop-blur-sm mb-5"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C25E3E] opacity-75" />
@@ -69,22 +69,23 @@ export default function Hero({ onNavigate }) {
               </span>
             </motion.div>
 
-            {/* Massive Name Headline */}
+            {/* User Name - Massive & Striking with Warm Theme Gradient */}
             <motion.h1
               variants={itemVariants}
-              className="text-6xl md:text-[90px] lg:text-[120px] font-black leading-[1.1] tracking-tighter mb-3"
+              className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-3"
             >
-              <span className="bg-gradient-to-r from-[#C25E3E] via-[#B85333] to-[#1C1917] bg-clip-text text-transparent inline-block">
+              <span className="bg-gradient-to-r from-[#C25E3E] via-[#A84A2C] to-[#1C1917] bg-clip-text text-transparent inline-block pb-1">
                 Nachiketha
               </span>
             </motion.h1>
 
-            {/* Role Sub-Headline */}
+            {/* Role Subtitle */}
             <motion.h2
               variants={itemVariants}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1C1917] tracking-tight mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1C1917] tracking-tight leading-[1.2] mb-5"
             >
-              Full-Stack Developer <span className="text-[#A8A29E]">&amp;</span>{" "}
+              Full-Stack Developer{" "}
+              <span className="text-[#78716C]">&amp; </span>
               <span className="relative inline-block text-[#C25E3E]">
                 AI Enthusiast.
                 {/* Decorative hand-drawn warm highlight curve underneath */}
@@ -138,13 +139,11 @@ export default function Hero({ onNavigate }) {
                 />
               </motion.a>
 
-              {/* Secondary Button */}
+              {/* Secondary Button - Download Resume */}
               <motion.a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (onNavigate) onNavigate("contact");
-                }}
+                href="https://drive.google.com/file/d/1L5cNekwLm35mrWezIo0Dc1LF2WLLKEB-/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#C25E3E] text-[#C25E3E] bg-transparent text-sm sm:text-base font-semibold hover:bg-[#FBF0EB] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
@@ -171,16 +170,11 @@ export default function Hero({ onNavigate }) {
           </motion.div>
 
           {/* ========================================================= */}
-          {/* RIGHT COLUMN: Interactive 3D Canvas                       */}
+          {/* RIGHT COLUMN: 2D Lottie Developer Animation               */}
           {/* ========================================================= */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex-1 w-full flex items-center justify-center relative py-4"
-          >
-            <Hero3D />
-          </motion.div>
+          <div className="flex-1 w-full flex items-center justify-center relative py-4 lg:py-0">
+            <HeroAnimation />
+          </div>
         </div>
       </div>
     </section>
