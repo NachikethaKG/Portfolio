@@ -140,17 +140,15 @@ export default function Hero({ onNavigate }) {
               </motion.a>
 
               {/* Secondary Button - Download Resume */}
-              <motion.a
+              <a
                 href="https://drive.google.com/file/d/1L5cNekwLm35mrWezIo0Dc1LF2WLLKEB-/view?usp=drivesdk"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#C25E3E] text-[#C25E3E] bg-transparent text-sm sm:text-base font-semibold hover:bg-[#FBF0EB] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                className="relative z-30 pointer-events-auto cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-[#C25E3E] text-[#C25E3E] bg-transparent text-sm sm:text-base font-semibold hover:bg-[#FBF0EB] hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
               >
                 <FileDown size={17} />
                 <span>Download Resume</span>
-              </motion.a>
+              </a>
             </motion.div>
 
             {/* Micro proof badges */}

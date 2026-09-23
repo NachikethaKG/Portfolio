@@ -168,13 +168,12 @@ export default function Certificates() {
               <Tilt
                 tiltMaxAngleX={5}
                 tiltMaxAngleY={5}
-                scale={1.02}
+                scale={1.01}
                 transitionSpeed={2500}
-                glareEnable={true}
-                glareMaxOpacity={0.1}
-                className="h-full rounded-3xl"
+                glareEnable={false}
+                className="relative h-full rounded-3xl"
               >
-                <div className="group flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 p-6 sm:p-7 shadow-[0_4px_20px_rgba(28,25,23,0.03)] hover:shadow-[0_12px_32px_rgba(28,25,23,0.07)] hover:border-stone-300 transition-all duration-300 h-full">
+                <div className="group relative flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 p-6 sm:p-7 shadow-[0_4px_20px_rgba(28,25,23,0.03)] hover:shadow-[0_12px_32px_rgba(28,25,23,0.07)] hover:border-stone-300 transition-all duration-300 h-full">
                   <div>
                     {/* Top Row: Organization and Date */}
                     <div className="flex items-center justify-between gap-3 mb-4">
@@ -229,7 +228,7 @@ export default function Certificates() {
                   </div>
 
                   {/* Card Footer: View Credential CTA or In Progress Pill */}
-                  <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                  <div className="relative z-20 pt-4 border-t border-stone-100 flex items-center justify-between">
                     <span className="text-xs text-stone-400">
                       {cert.inProgress
                         ? "Active Certification Track"
@@ -245,17 +244,16 @@ export default function Certificates() {
                         <span>In Progress</span>
                       </span>
                     ) : (
-                      <motion.a
+                      <a
                         href={cert.credentialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                        onClick={(e) => e.stopPropagation()}
+                        className="relative z-30 pointer-events-auto cursor-pointer inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white hover:scale-105 active:scale-95 border border-[#C25E3E]/20 text-xs font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
                       >
                         <span>{cert.statusText}</span>
                         <ExternalLink size={13} />
-                      </motion.a>
+                      </a>
                     )}
                   </div>
                 </div>

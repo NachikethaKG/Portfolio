@@ -102,18 +102,18 @@ export default function Contact() {
             </span>
             <div className="flex items-center gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/NachikethaKG"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-[#F5F5F0] text-stone-700 hover:text-[#C25E3E] hover:bg-[#FBF0EB] transition-colors"
                 aria-label="GitHub Profile"
               >
                 <GithubIcon size={18} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nachikethakg"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="p-2.5 rounded-xl bg-[#F5F5F0] text-stone-700 hover:text-[#C25E3E] hover:bg-[#FBF0EB] transition-colors"
                 aria-label="LinkedIn Profile"
               >

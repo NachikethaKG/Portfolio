@@ -324,44 +324,38 @@ export default function Contact() {
           {/* Social Links Row */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 sm:mt-12 flex items-center justify-center gap-4"
+            className="relative z-30 mt-10 sm:mt-12 flex items-center justify-center gap-4"
           >
             {/* GitHub */}
-            <motion.a
+            <a
               href="https://github.com/NachikethaKG"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              whileHover={{ y: -3, scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3.5 rounded-2xl bg-white border border-stone-200/90 text-stone-700 shadow-xs hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/60 hover:shadow-md transition-colors"
+              className="relative z-30 pointer-events-auto cursor-pointer p-3.5 rounded-2xl bg-white border border-stone-200/90 text-stone-700 shadow-xs hover:-translate-y-1 hover:scale-110 active:scale-95 hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/60 hover:shadow-md transition-all duration-200"
             >
               <GithubIcon size={20} />
-            </motion.a>
+            </a>
 
             {/* LinkedIn */}
-            <motion.a
+            <a
               href="https://www.linkedin.com/in/nachikethakg"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              whileHover={{ y: -3, scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3.5 rounded-2xl bg-white border border-stone-200/90 text-stone-700 shadow-xs hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/60 hover:shadow-md transition-colors"
+              className="relative z-30 pointer-events-auto cursor-pointer p-3.5 rounded-2xl bg-white border border-stone-200/90 text-stone-700 shadow-xs hover:-translate-y-1 hover:scale-110 active:scale-95 hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/60 hover:shadow-md transition-all duration-200"
             >
               <LinkedinIcon size={20} />
-            </motion.a>
+            </a>
 
             {/* Email Icon */}
-            <motion.a
+            <a
               href={`mailto:${emailAddress}`}
               aria-label="Send direct email"
-              whileHover={{ y: -3, scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3.5 rounded-2xl bg-white border border-stone-200/90 text-stone-700 shadow-xs hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/60 hover:shadow-md transition-colors"
+              className="relative z-30 pointer-events-auto cursor-pointer p-3.5 rounded-2xl bg-white border border-stone-200/90 text-stone-700 shadow-xs hover:-translate-y-1 hover:scale-110 active:scale-95 hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/60 hover:shadow-md transition-all duration-200"
             >
               <Mail size={20} />
-            </motion.a>
+            </a>
           </motion.div>
 
           {/* Location & Status Footnote */}

@@ -170,11 +170,10 @@ export default function Projects() {
                 <Tilt
                   tiltMaxAngleX={5}
                   tiltMaxAngleY={5}
-                  scale={1.02}
+                  scale={1.01}
                   transitionSpeed={2500}
-                  glareEnable={true}
-                  glareMaxOpacity={0.1}
-                  className="h-full rounded-3xl"
+                  glareEnable={false}
+                  className="relative h-full rounded-3xl"
                 >
                   <div className="group relative flex flex-col justify-between rounded-3xl bg-white border border-stone-200/80 shadow-[0_4px_20px_rgba(28,25,23,0.04)] hover:shadow-[0_16px_36px_rgba(28,25,23,0.09)] hover:border-stone-300/90 transition-all duration-300 overflow-hidden h-full">
                     {/* ------------------------------------------------- */}
@@ -241,39 +240,44 @@ export default function Projects() {
                       {/* ----------------------------------------------- */}
                       {/* Card Footer: Action Buttons                     */}
                       {/* ----------------------------------------------- */}
-                      <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <span className="text-xs font-medium text-stone-400 group-hover:text-stone-600 transition-colors">
-                          Learn more
-                        </span>
+                      <div className="relative z-20 pt-4 border-t border-stone-100 flex items-center justify-between">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="relative z-30 pointer-events-auto cursor-pointer inline-flex items-center gap-1.5 text-xs font-semibold text-[#C25E3E] hover:underline"
+                        >
+                          <span>View on GitHub</span>
+                          <ExternalLink size={12} />
+                        </a>
 
                         <div className="flex items-center gap-2">
                           {/* GitHub Repo Button */}
-                          <motion.a
+                          <a
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.14 }}
-                            whileTap={{ scale: 0.94 }}
-                            className="p-2.5 rounded-xl bg-[#FAFAF9] text-stone-600 hover:text-[#1C1917] hover:bg-stone-100 border border-stone-200/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                            onClick={(e) => e.stopPropagation()}
+                            className="relative z-30 pointer-events-auto cursor-pointer p-2.5 rounded-xl bg-[#FAFAF9] text-stone-600 hover:text-[#1C1917] hover:bg-stone-100 hover:scale-110 active:scale-95 border border-stone-200/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
                             aria-label={`${project.title} GitHub Repository`}
                             title="GitHub Repository"
                           >
                             <GithubIcon size={17} />
-                          </motion.a>
+                          </a>
 
                           {/* Live Demo / Architecture Button */}
-                          <motion.a
+                          <a
                             href={project.demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.14 }}
-                            whileTap={{ scale: 0.94 }}
-                            className="p-2.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                            onClick={(e) => e.stopPropagation()}
+                            className="relative z-30 pointer-events-auto cursor-pointer p-2.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white hover:scale-110 active:scale-95 border border-[#C25E3E]/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
                             aria-label={`${project.title} Live Demo / Architecture`}
                             title="Live Demo / Architecture"
                           >
                             <ExternalLink size={17} />
-                          </motion.a>
+                          </a>
                         </div>
                       </div>
                     </div>
