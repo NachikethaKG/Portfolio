@@ -7,68 +7,80 @@ import {
   Calendar,
   Sparkles,
   CheckCircle2,
+  Clock,
 } from "lucide-react";
 
 const CERTIFICATES_DATA = [
   {
-    id: "aws-cloud",
-    title: "AWS Certified Solutions Architect",
-    organization: "Amazon Web Services (AWS)",
-    date: "2026",
-    credentialId: "AWS-PSA-2026-9481",
-    credentialUrl: "https://aws.amazon.com/verification",
+    id: "ibm-genai",
+    title: "IBM Generative AI Professional",
+    organization: "IBM",
+    date: "Verified",
+    credentialId: "IBM-GENAI-PRO",
+    credentialUrl:
+      "https://github.com/NachikethaKG/Certificates/blob/main/Certificates/IBM_GenAI/IBM%20Generative%20AI%20professional%20certificate.pdf",
+    inProgress: false,
+    statusText: "View Credential",
     accent: {
       text: "text-[#C25E3E]",
       bg: "bg-[#FBF0EB]",
       border: "border-[#C25E3E]/25",
       badge: "bg-[#FBF0EB] text-[#C25E3E]",
     },
-    skills: ["Cloud Architecture", "AWS IAM", "VPC", "Serverless"],
+    skills: ["Generative AI", "LLMs", "Prompt Engineering", "Foundation Models"],
   },
   {
-    id: "sap-btp",
-    title: "SAP Certified Associate - Cloud Integration",
-    organization: "SAP SE",
-    date: "2026",
-    credentialId: "SAP-ID-672901",
-    credentialUrl: "https://www.sap.com",
+    id: "udemy-java-fullstack",
+    title: "Java Full-Stack Developer",
+    organization: "Udemy",
+    date: "Verified",
+    credentialId: "UDEMY-JAVA-FS",
+    credentialUrl:
+      "https://github.com/NachikethaKG/Certificates/blob/main/Certificates/Java_FullStack/JAVA%20FULLSTACK.pdf",
+    inProgress: false,
+    statusText: "View Credential",
     accent: {
       text: "text-[#557A66]",
       bg: "bg-[#EFF5F1]",
       border: "border-[#557A66]/25",
       badge: "bg-[#EFF5F1] text-[#557A66]",
     },
-    skills: ["BTP Integration", "REST / OData APIs", "Enterprise Security"],
+    skills: ["Java", "Spring Boot", "REST APIs", "Full-Stack Architecture"],
   },
   {
-    id: "spring-java",
-    title: "Spring Boot & Microservices Professional",
-    organization: "VMware Tanzu / Spring",
-    date: "2025",
-    credentialId: "SPR-DEV-4410",
-    credentialUrl: "https://spring.io",
+    id: "ualberta-ood",
+    title: "Object-Oriented Design (System Design)",
+    organization: "University of Alberta",
+    date: "Verified",
+    credentialId: "UALBERTA-OOD",
+    credentialUrl:
+      "https://github.com/NachikethaKG/Certificates/blob/main/Certificates/System_Design/object%20oriented%20design.pdf",
+    inProgress: false,
+    statusText: "View Credential",
     accent: {
       text: "text-amber-800",
       bg: "bg-amber-50",
       border: "border-amber-200",
       badge: "bg-amber-50 text-amber-800",
     },
-    skills: ["Java 21", "Spring Boot 3", "Microservices", "JPA / Hibernate"],
+    skills: ["System Design", "Design Patterns", "UML", "SOLID Principles"],
   },
   {
-    id: "deeplearning-ai",
-    title: "Deep Learning & GenAI Specialization",
-    organization: "DeepLearning.AI",
-    date: "2025",
-    credentialId: "DLAI-RAG-8821",
-    credentialUrl: "https://deeplearning.ai",
+    id: "ibm-rag-agentic",
+    title: "IBM RAG and Agentic AI Professional",
+    organization: "IBM",
+    date: "Ongoing",
+    credentialId: "IBM-RAG-AGENTIC",
+    credentialUrl: "#",
+    inProgress: true,
+    statusText: "In Progress",
     accent: {
-      text: "text-stone-800",
-      bg: "bg-stone-100",
-      border: "border-stone-300",
-      badge: "bg-stone-100 text-stone-800",
+      text: "text-[#557A66]",
+      bg: "bg-[#EFF5F1]",
+      border: "border-[#557A66]/25",
+      badge: "bg-[#EFF5F1] text-[#557A66]",
     },
-    skills: ["PyTorch", "Transformers", "RAG Systems", "Vector Embeddings"],
+    skills: ["RAG Pipelines", "Agentic Workflows", "Vector Databases", "AI Agents"],
   },
 ];
 
@@ -190,11 +202,18 @@ export default function Certificates() {
                       {cert.title}
                     </h3>
 
-                    {/* Verified Status Tag */}
-                    <div className="flex items-center gap-1.5 text-xs text-[#557A66] font-medium mb-5">
-                      <CheckCircle2 size={14} />
-                      <span>Verified Credential &bull; {cert.credentialId}</span>
-                    </div>
+                    {/* Verified / Ongoing Status Tag */}
+                    {cert.inProgress ? (
+                      <div className="flex items-center gap-1.5 text-xs text-amber-700 font-medium mb-5">
+                        <Clock size={14} />
+                        <span>Specialization Track &bull; Currently Enrolled</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-1.5 text-xs text-[#557A66] font-medium mb-5">
+                        <CheckCircle2 size={14} />
+                        <span>Verified Credential &bull; {cert.organization}</span>
+                      </div>
+                    )}
 
                     {/* Skills pills */}
                     <div className="flex flex-wrap gap-1.5 mb-6">
@@ -209,23 +228,35 @@ export default function Certificates() {
                     </div>
                   </div>
 
-                  {/* Card Footer: View Credential CTA */}
+                  {/* Card Footer: View Credential CTA or In Progress Pill */}
                   <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
                     <span className="text-xs text-stone-400">
-                      Official Issuer Verification
+                      {cert.inProgress
+                        ? "Active Certification Track"
+                        : "Official Issuer Verification"}
                     </span>
 
-                    <motion.a
-                      href={cert.credentialUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
-                    >
-                      <span>View Credential</span>
-                      <ExternalLink size={13} />
-                    </motion.a>
+                    {cert.inProgress ? (
+                      <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-amber-50/90 text-amber-800 border border-amber-300/60 text-xs font-semibold shadow-2xs">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75" />
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-600" />
+                        </span>
+                        <span>In Progress</span>
+                      </span>
+                    ) : (
+                      <motion.a
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+                      >
+                        <span>{cert.statusText}</span>
+                        <ExternalLink size={13} />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </Tilt>

@@ -28,21 +28,41 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Back to top button */}
-        <motion.button
-          type="button"
-          onClick={scrollToTop}
-          whileHover={{ y: -2, scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-stone-200 text-stone-600 font-medium hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/40 transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
-          aria-label="Back to Top"
-        >
-          <span>Back to top</span>
-          <ArrowUp
-            size={14}
-            className="group-hover:-translate-y-0.5 transition-transform"
-          />
-        </motion.button>
+        {/* Footer Links & Back to top button */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <a
+            href="https://github.com/NachikethaKG"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-stone-600 hover:text-[#C25E3E] font-medium transition-colors"
+          >
+            GitHub
+          </a>
+          <span className="text-stone-300">•</span>
+          <a
+            href="https://www.linkedin.com/in/nachikethakg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-stone-600 hover:text-[#C25E3E] font-medium transition-colors"
+          >
+            LinkedIn
+          </a>
+          <span className="text-stone-300">•</span>
+          <motion.button
+            type="button"
+            onClick={scrollToTop}
+            whileHover={{ y: -2, scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-stone-200 text-stone-600 font-medium hover:text-[#C25E3E] hover:border-[#C25E3E]/40 hover:bg-[#FBF0EB]/40 transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
+            aria-label="Back to Top"
+          >
+            <span>Back to top</span>
+            <ArrowUp
+              size={14}
+              className="group-hover:-translate-y-0.5 transition-transform"
+            />
+          </motion.button>
+        </div>
       </div>
     </footer>
   );

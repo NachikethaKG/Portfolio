@@ -54,8 +54,8 @@ const PROJECTS_DATA = [
     description:
       "AI-assisted retrieval-augmented generation (RAG) application with automated backend workers.",
     techStack: ["Temporal", "ChromaDB", "Docker", "Copilot SDK"],
-    githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    githubUrl: "https://github.com/NachikethaKG/Aegis",
+    demoUrl: "https://github.com/NachikethaKG/Aegis",
     theme: {
       gradient: "from-[#EFF5F1] via-[#E2EDE6] to-[#FAF9F6]",
       accentBorder: "border-[#557A66]/20",
@@ -71,8 +71,8 @@ const PROJECTS_DATA = [
     description:
       "Fintech web application for GSTR-2B and MSME invoice compliance risk reporting and data processing.",
     techStack: ["React", "Data Analysis", "Web App"],
-    githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    githubUrl: "https://github.com/NachikethaKG/PAYSAFEX",
+    demoUrl: "https://github.com/NachikethaKG/PAYSAFEX",
     theme: {
       gradient: "from-[#FEF3C7]/40 via-[#FDF2E9] to-[#FAF9F6]",
       accentBorder: "border-amber-600/20",
@@ -251,7 +251,7 @@ export default function Projects() {
                           <motion.a
                             href={project.githubUrl}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.14 }}
                             whileTap={{ scale: 0.94 }}
                             className="p-2.5 rounded-xl bg-[#FAFAF9] text-stone-600 hover:text-[#1C1917] hover:bg-stone-100 border border-stone-200/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"
@@ -265,7 +265,7 @@ export default function Projects() {
                           <motion.a
                             href={project.demoUrl}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.14 }}
                             whileTap={{ scale: 0.94 }}
                             className="p-2.5 rounded-xl bg-[#FBF0EB] text-[#C25E3E] hover:bg-[#C25E3E] hover:text-white border border-[#C25E3E]/20 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C25E3E]/30"

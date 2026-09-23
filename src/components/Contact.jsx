@@ -330,7 +330,7 @@ export default function Contact() {
             <motion.a
               href="https://github.com/NachikethaKG"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="GitHub Profile"
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -341,9 +341,9 @@ export default function Contact() {
 
             {/* LinkedIn */}
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nachikethakg"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
